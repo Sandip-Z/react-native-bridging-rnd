@@ -14,9 +14,18 @@ import {
   StatusBar,
   Text,
   View,
+  NativeModules, 
+  Button
 } from 'react-native';
 
 const App: () => Node = () => {
+
+  const {CalendarModule} = NativeModules
+
+  const pressMe = () => {
+    CalendarModule.createCalendarEvent('name', 'location')
+  }
+
   return (
     <SafeAreaView>
       <StatusBar barStyle={'dark-content'} />
@@ -25,6 +34,7 @@ const App: () => Node = () => {
         >
         <View>
           <Text>Hello World</Text>
+          <Button title="Press me" onPress={pressMe}/>
         </View>
       </ScrollView>
     </SafeAreaView>
