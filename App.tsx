@@ -17,10 +17,9 @@ import {
   NativeModules, 
   Button
 } from 'react-native';
+import CalendarModule from './src/Components/Calendar';
 
 const App: () => Node = () => {
-
-  const {CalendarModule} = NativeModules
 
   const pressMe = () => {
     CalendarModule.createCalendarEvent('name', 'location')
